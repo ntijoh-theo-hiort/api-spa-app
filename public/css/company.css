@@ -1,3 +1,28 @@
 div.employee.card {
     border: 1px solid #000;
 }
+body{
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 30px;
+    background-color: grey;
+    padding: 20px;
+}
+.employee-card{
+    border: 10px dotted red;
+    border-inline: 10px dotted green;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 10s;
+}
+.employee-card:hover{
+    border: 20px dotted red;
+    border-inline: 20px dotted green;
+    width: 500px;
+    height: 400px;
+    /* padding: 20px; */
+    /* box-sizing: border-box; */
+    /* transform: rotate3d(1, 1, 1, 360deg); */
+}

@@ -50,10 +50,10 @@ class Server < Sinatra::Base
     get '/api/employees/new' do
         content_type :json
         {formFields: [{name:  'text'},
-                  {email: 'text'},
-                  {phone: 'tel'},
-                  {department_id: 'number'},
-                  {img:  'image'}]}.to_json
+            {email: 'text'},
+            {phone: 'tel'},
+            {department_id: 'number'},
+            {img:  'image'}]}.to_json
     end
 
     #edit
@@ -62,12 +62,12 @@ class Server < Sinatra::Base
         result = @db.execute('SELECT * FROM employees WHERE id = ?', params['id']).first
         {employee: result,
          formFields: [
-                {name: 'name',          type: 'text',   value: result['name']},
-                {name: 'email',         type: 'text',   value: result['email']},
-                {name: 'phone',         type: 'tel',    value: result['phone']},
-                {name: 'department_id', type: 'number', value: result['department_id']},
-                {name: 'img',           type: 'img',    value: result['img']}
-            ]}.to_json
+            {name: 'name',          type: 'text',   value: result['name']},
+            {name: 'email',         type: 'text',   value: result['email']},
+            {name: 'phone',         type: 'tel',    value: result['phone']},
+            {name: 'department_id', type: 'number', value: result['department_id']},
+            {name: 'img',           type: 'img',    value: result['img']}
+        ]}.to_json
     end
 
     #update
@@ -76,9 +76,9 @@ class Server < Sinatra::Base
         payload = request.body.read # data sent using fetch is placed in request body
         content_type :json
         result = @db.execute('UPDATE employees 
-                              SET name=?, email=?, phone=?, department_id=?, img=?
-                              WHERE id = ?',
-                              [payload['name'], payload['email'], payload['phone'], payload['department_id'], payload['img'], payload['id']])
+            SET name=?, email=?, phone=?, department_id=?, img=?
+            WHERE id = ?',
+            [payload['name'], payload['email'], payload['phone'], payload['department_id'], payload['img'], payload['id']])
         return {result: 'success'}.to_json                             
     end
 
@@ -87,8 +87,8 @@ class Server < Sinatra::Base
         payload = request.body.read
         content_type :json
         result = @db.execute('INSERT into employees (name, email, phone, department_id, img) 
-                              VALUES (?,?,?,?,?)',
-                              payload['name'], payload['email'], payload['phone'], payload['department_id'], payload['img'])
+            VALUES (?,?,?,?,?)',
+            payload['name'], payload['email'], payload['phone'], payload['department_id'], payload['img'])
         return {result: 'success'}.to_json        
     end
 

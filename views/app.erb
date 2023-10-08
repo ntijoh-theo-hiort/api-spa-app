@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="/js/api.js"></script>
-    <script src="../js/employeeCardComponent.js" defer></script>
+    <%# <script src="/js/api.js" defer></script> %>
+    <script src="../js/employeeApp.js" defer></script>
+    <script src="../js/employeeForm.js" defer></script>
+    <script src="../js/employeeList.js" type="module" defer></script>
     <link rel="stylesheet" href="/css/company.css">
     <title>Document</title>
 
@@ -13,20 +15,29 @@
 </head>
 <body>
     <main>
-        <div class='employee card' data-id=''>
+        <%# <div class='employee card' data-id=''>
             <h1 class='name'>hej</h1>
             <p class='email'>tjej</p>
             <p class='phone'>nej</p>
             <p class='department_id'>gay</p>
             <img src='../img/0cc61e19-294a-4861-b3a7-3c9030185330.jpg'>
-        </div>
+        </div> %>
         <%# <employee-card slot="detta är en mail"/> %>
+
+        <%# <form id="employee_creator">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="email" required>
+            <input type="number" placeholder="phone" required>
+            <input type="text" placeholder="dep_id" required>
+            <input type="submit" placeholder="Submit">
+        </form> %>
+        <employee-app/>
     </main>
 </body>
 
-<script>
+<%# <script>
     window.onload = function() {
         index()
     }
-</script>
+</script> %>
 </html>
